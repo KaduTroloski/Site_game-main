@@ -18,8 +18,7 @@ function App() {
             headers: {
               "Access-Control-Allow-Origin": "https://api-node-7vk8.onrender.com/user?search=",
               "Access-Control-Allow-Methods": "GET",
-              "Access-Control-Allow-Headers": "*",
-              "Access-Control-Max-Age": 86400
+              "Access-Control-Allow-Headers": "*"
 
             }
           })
