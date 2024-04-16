@@ -14,7 +14,15 @@ function App() {
       const [Data, Setdata] = useState("");
       
       const VerifyUser = async () => {
-          await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
+          await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`, {
+            headers: {
+              "Access-Control-Allow-Origin": "https://api-node-7vk8.onrender.com/user",
+              "Access-Control-Allow-Methods": "POST, GET",
+              "Access-Control-Allow-Headers": "*",
+              "Access-Control-Max-Age": 86400
+
+            }
+          })
             .then(res => {
                 Setdata(JSON.stringify(res.data))
                })
