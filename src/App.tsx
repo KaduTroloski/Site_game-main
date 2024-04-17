@@ -25,7 +25,7 @@ function App() {
               .then(res  =>  {
                 Setdata(JSON.stringify(res.data))
                })
-          setTimeout(() => {
+
          if(Data.length <= 2 || inputText.length == 0){ 
               const style_input = document.getElementById("Place") as HTMLElement
               const style_text = document.getElementById("Fail_text") as HTMLElement
@@ -43,7 +43,7 @@ function App() {
   
               }
              
-          }},3000 )
+          }
       
       }
       let Replacedata = (Data.replace(/"/g, ""));
