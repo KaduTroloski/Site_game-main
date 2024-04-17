@@ -23,13 +23,19 @@ function App() {
                })
 
          if(Data.length <= 2 || inputText.length == 0){ 
+              const Error = async () => {
               const style_input = document.getElementById("Place") as HTMLElement
               const style_text = document.getElementById("Fail_text") as HTMLElement
               style_input.style.border = '2px solid red';
               style_text.style.display = 'flex'
+              }
+
+              Error();
               
           }
            else {
+
+              const succes = async () => {
               const div1 = document.getElementById("Input") as HTMLElement
               const div2 = document.getElementById("Infos") as HTMLElement
                 
@@ -38,7 +44,8 @@ function App() {
                       div2.style.display = 'flex';
   
               }
-             
+            }
+             succes();
           }
       
       }
