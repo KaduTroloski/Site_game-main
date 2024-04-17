@@ -6,11 +6,7 @@ import Infos from './Components/Infos';
 
 function App() {
 
-  const [inputText, setInputText] = useState("");
-  const GetInputValue = ({evt}: any) => {
-     const Value = evt.target.value
-     setInputText(Value)
-  }
+  const [inputText, setInputText] = useState('');
       const [Data, Setdata] = useState("");
       
     const VerifyUser = async () => {
@@ -66,7 +62,7 @@ function App() {
 
       <div id="Input">
         <h2>Enter your Nickname</h2>
-        <input id='Place' type="text" placeholder="Nickname..." onChange={evt => GetInputValue(evt)} value={inputText} ></input>
+        <input id='Place' type="text" placeholder="Nickname..." onChange={event => setInputText(event.target.value)} ></input>
         <p id="Fail_text">User not fund</p>
         <button onClick={VerifyUser} >Entrar</button>
     </div>
