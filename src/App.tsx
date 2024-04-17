@@ -24,10 +24,10 @@ function App() {
 
          if(Data.length <= 2 || inputText.length == 0){ 
               const Error = async () => {
-              const style_input = document.getElementById("Place") as HTMLElement
-              const style_text = document.getElementById("Fail_text") as HTMLElement
-              style_input.style.border = '2px solid red';
-              style_text.style.display = 'flex'
+              const style_input = await document.getElementById("Place") as HTMLElement
+              const style_text = await document.getElementById("Fail_text") as HTMLElement
+              style_input.style.border = await '2px solid red';
+              style_text.style.display = await 'flex'
               }
 
               Error();
@@ -36,8 +36,8 @@ function App() {
            else {
 
               const succes = async () => {
-              const div1 = document.getElementById("Input") as HTMLElement
-              const div2 = document.getElementById("Infos") as HTMLElement
+              const div1 = await document.getElementById("Input") as HTMLElement
+              const div2 = await document.getElementById("Infos") as HTMLElement
                 
                if(div1.style.display != 'flex'){
                       div1.style.display = 'none';
