@@ -1,5 +1,5 @@
 
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 import './App.css'
 import axios from 'axios';
 import Infos from './Components/Infos';
@@ -7,10 +7,9 @@ import Infos from './Components/Infos';
 function App() {
 
   const [inputText, setInputText] = useState("");
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputText(e.target.value);
-    }
-
+  const GetInputValue = ({evt}: any) => {
+      setInputText(evt.target.value)
+  }
       const [Data, Setdata] = useState("");
       
     const VerifyUser = async () => {
@@ -66,7 +65,7 @@ function App() {
 
       <div id="Input">
         <h2>Enter your Nickname</h2>
-        <input id='Place' type="text" placeholder="Nickname..." onChangeCapture={handleChange} value={inputText}></input>
+        <input id='Place' type="text" placeholder="Nickname..." onChange={evt => GetInputValue(evt)} value={inputText}></input>
         <p id="Fail_text">User not fund</p>
         <button onClick={VerifyUser} >Entrar</button>
     </div>
