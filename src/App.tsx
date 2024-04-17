@@ -13,21 +13,20 @@ function App() {
 
       const [Data, Setdata] = useState("");
       
-      const VerifyUser = async () => {
-          await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`, {
+    const VerifyUser = async () => {
+          await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`,{
             headers: {
               "Access-Control-Allow-Origin": "https://site-game-main.vercel.app",
               "Access-Control-Allow-Methods": "GET",
               "Access-Control-Allow-Headers": "*"
 
             }
-          })
-            .then(res => {
+          }) 
+              .then(res  =>  {
                 Setdata(JSON.stringify(res.data))
                })
-              
-           
-          if(Data.length <= 2 || inputText.length == 0){ 
+          setTimeout(() => {
+         if(Data.length <= 2 || inputText.length == 0){ 
               const style_input = document.getElementById("Place") as HTMLElement
               const style_text = document.getElementById("Fail_text") as HTMLElement
               style_input.style.border = '2px solid red';
@@ -44,7 +43,7 @@ function App() {
   
               }
              
-          }
+          }}, 200)
       
       }
       let Replacedata = (Data.replace(/"/g, ""));
