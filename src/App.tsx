@@ -65,7 +65,7 @@ function App() {
 
       <div id="Input">
         <h2>Enter your Nickname</h2>
-        <input id='Place' type="text" placeholder="Nickname..." onChange={evt => GetInputValue(evt)} value={inputText}></input>
+        <input id='Place' type="text" placeholder="Nickname..." onChange={evt => GetInputValue(evt)} ></input>
         <p id="Fail_text">User not fund</p>
         <button onClick={VerifyUser} >Entrar</button>
     </div>
