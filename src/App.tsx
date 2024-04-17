@@ -43,7 +43,7 @@ function App() {
   
               }
              
-          }}, 2000)
+          }},3000 )
       
       }
       let Replacedata = (Data.replace(/"/g, ""));
