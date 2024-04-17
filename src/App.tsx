@@ -8,7 +8,8 @@ function App() {
 
   const [inputText, setInputText] = useState("");
   const GetInputValue = ({evt}: any) => {
-      setInputText(evt.target.value)
+     const Value = evt.target.value
+     setInputText(Value)
   }
       const [Data, Setdata] = useState("");
       
