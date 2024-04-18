@@ -13,7 +13,7 @@ function App() {
     console.log(inputText)
   };
 
-  const [Data, Setdata] = useState(inputText);
+  const [Data, Setdata] = useState('');
 
   const VerifyUser = async () => {
 
@@ -21,6 +21,7 @@ function App() {
     axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
+        Setdata(inputText)
         Setdata(JSON.stringify(res.data))
         console.log(Data)
         if (Data.length == 0 || inputText.length == 0 || Data.length <= 2) {
