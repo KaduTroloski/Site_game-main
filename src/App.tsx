@@ -8,7 +8,7 @@ function App() {
   const [inputText, setInputText] = useState('')
 
 
-  const handleChange = ({ event }: any) => {
+  const handleChange = (event) => {
 
     setInputText(event.target.value)
     console.log(inputText)
