@@ -24,6 +24,7 @@ function App() {
       .then(res => {
 
         Setdata(JSON.stringify(res.data))
+        console.log(Data)
       })
       .finally(() => {
         if (Data.length > 0 || inputText.length == 0) {
@@ -67,7 +68,7 @@ function App() {
 
         <div id="Input">
           <h2>Enter your Nickname</h2>
-          <input id='Place' type="text" name='Place' placeholder="Nickname..." onChange={handleChange} onMouseLeave={handleChange}></input>
+          <input id='Place' type="text" name='Place' placeholder="Nickname..." onChange={handleChange} onBeforeInput={handleChange}></input>
           <p id="Fail_text">User not fund</p>
           <button onClick={VerifyUser} >Entrar</button>
         </div>
