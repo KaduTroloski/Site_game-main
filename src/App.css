@@ -4,15 +4,15 @@
   box-sizing: border-box;
 }
 
-#Home{
-  background: linear-gradient(160deg ,rgb(164, 238, 180), #274d36);
+#Home {
+  background: linear-gradient(160deg, rgb(164, 238, 180), #274d36);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#Input{
+#Input {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,12 +21,12 @@
 }
 
 
-#Input h2{
+#Input h2 {
   font-family: "Prompt", sans-serif;
   color: rgb(43, 43, 43);
 }
 
-#Place{
+#Place {
   font-family: "Nanum Gothic", sans-serif;
   outline: none;
   height: 50px;
@@ -35,7 +35,7 @@
   padding: 10px;
   border-radius: 10px;
   background-color: rgb(209, 209, 209);
-  box-shadow: inset  1px 1px 8px  black ;
+  box-shadow: inset 1px 1px 8px black;
   font-size: medium;
 
   transition: Background-color ease-in-out 0.3s, box-shadow 2s;
@@ -43,17 +43,17 @@
 
 }
 
-#Place:hover{
+#Place:hover {
   background-color: rgb(236, 236, 236);
-  box-shadow: 1px 2px 8px  black;
+  box-shadow: 1px 2px 8px black;
 }
 
 #Place::placeholder {
   font-style: italic;
 }
 
-#Input button{
-  border:none;
+#Input button {
+  border: none;
   border-radius: 10px;
   background: #274d36;
   height: 35px;
@@ -66,11 +66,11 @@
   transition: 0.5s;
 }
 
-#Input button:hover{
- background: rgb(164, 238, 180);
+#Input button:hover {
+  background: rgb(164, 238, 180);
 }
 
-#Input p{
+#Input p {
   font-family: "Nanum Gothic", sans-serif;
   color: red;
   font-weight: 600;
@@ -78,7 +78,7 @@
 }
 
 
-#Infos{
+#Infos {
   display: none;
   gap: 20px;
   flex-direction: column;
@@ -87,12 +87,12 @@
 
 }
 
-#Infos h2{
+#Infos h2 {
   font-family: "Prompt", sans-serif;
   color: rgb(43, 43, 43);
 }
 
-.Score{
+.Score {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,31 +102,32 @@
   text-align: center;
   font-family: "Nanum Gothic", sans-serif;
   border-radius: 15px;
-  background: linear-gradient(160deg ,rgb(164, 238, 180), #274d36);
-  box-shadow: 1px 2px 8px  black;
+  background: linear-gradient(160deg, rgb(164, 238, 180), #274d36);
+  box-shadow: 1px 2px 8px black;
 }
 
-.Main_score{
+.Main_score {
   display: flex;
   padding: inherit;
   gap: 15px;
 }
 
-.Main_score h3{
-  font-size:xx-large;
+.Main_score h3 {
+  font-size: xx-large;
 }
-.PlayerInfos{
+
+.PlayerInfos {
   display: flex;
   align-items: center;
   text-align: auto;
   padding: 15px;
   font-family: "Nanum Gothic", sans-serif;
   border-radius: 15px;
-  background: linear-gradient(160deg ,rgb(164, 238, 180), #274d36);
-  box-shadow: 1px 2px 8px  black;
+  background: linear-gradient(160deg, rgb(164, 238, 180), #274d36);
+  box-shadow: 1px 2px 8px black;
 }
 
-.Main_playerinfo{
+.Main_playerinfo {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -139,17 +140,19 @@
   min-width: 100px;
 }
 
-.box{
+.box {
   display: flex;
   gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.flex_one{
+.flex_one {
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
-  flex: 1; 
+  flex: 1;
   padding: inherit;
   max-width: 180px;
   min-width: 150px;
@@ -157,10 +160,10 @@
 
 
 
-.PlayerInfos  ul{
+.PlayerInfos ul {
   list-style: none;
   display: flex;
   gap: 20px;
   flex-direction: column;
-  
+
 }
