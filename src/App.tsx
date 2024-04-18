@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import './App.css'
 import axios from 'axios';
 import Infos from './Components/Infos';
@@ -8,8 +8,8 @@ function App() {
   const [inputText, setInputText] = useState('')
 
 
-  const handleChange = ({ event }: any) => {
-    setInputText(event.target.value)
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputText(e.target.value)
     console.log(inputText)
   };
 
