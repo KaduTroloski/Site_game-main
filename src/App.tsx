@@ -22,9 +22,7 @@ function App() {
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
         Setdata(JSON.stringify(res.data))
-      })
-      .finally(() => {
-        Setdata(Data)
+        Setdata(JSON.stringify(res.data))
         if (Data.length == 0 || inputText.length == 0) {
           const style_input = document.getElementById("Place") as HTMLElement
           const style_text = document.getElementById("Fail_text") as HTMLElement
