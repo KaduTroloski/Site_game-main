@@ -10,6 +10,9 @@ function App() {
   const [Data, Setdata] = useState("");
 
   const VerifyUser = async () => {
+    axios.defaults.baseURL = 'https://api-node-7vk8.onrender.com';
+    axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
         Setdata(JSON.stringify(res.data))
