@@ -82,8 +82,7 @@
   display: none;
   gap: 20px;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
 
 }
 
@@ -135,17 +134,18 @@
   align-items: center;
 }
 
-.Main_playerinfo hr {
-  max-width: 200px;
-  min-width: 100px;
-}
-
 .box {
   display: flex;
   gap: 50px;
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.Main_playerinfo hr {
+  max-width: 200px;
+  min-width: 100px;
+}
+
 
 .flex_one {
   align-items: center;
