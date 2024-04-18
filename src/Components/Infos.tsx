@@ -1,4 +1,4 @@
-import '../App.css';
+import './Infos.css'
 
 
 function Infos({ data }: any) {
