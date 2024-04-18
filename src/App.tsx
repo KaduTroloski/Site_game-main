@@ -12,7 +12,7 @@ function App() {
   const VerifyUser = async () => {
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`, {
       headers: {
-        "Access-Control-Allow-Origin": "https://api-node-7vk8.onrender.com",
+        "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET",
         "Access-Control-Allow-Headers": "*",
       }
