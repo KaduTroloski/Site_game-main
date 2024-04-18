@@ -18,7 +18,7 @@ function App() {
 
     axios.defaults.headers.get['Content-Type'] = 'application/json;charset=utf-8';
     axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
-    await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
+    await axios.get(`https://api-node-7vk8.onrender.com/user?search=${Data}`)
       .then(res => {
         Setdata(JSON.stringify(res.data))
         if (Data.length == 0) {
