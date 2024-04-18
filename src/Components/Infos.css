@@ -81,7 +81,7 @@
     min-width: 100px;
 }
 
-.box {
+#box {
     display: flex;
     gap: 50px;
     flex-wrap: wrap;

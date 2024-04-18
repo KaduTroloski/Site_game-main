@@ -4,7 +4,7 @@ import './Infos.css'
 function Infos({ data }: any) {
   return (
     <>
-      <div className="box">
+      <div id="box">
 
         <div className="Score">
           <h3>You Scored</h3>
