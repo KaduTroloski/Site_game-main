@@ -22,10 +22,9 @@ function App() {
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
         Setdata(JSON.stringify(res.data))
-        console.log(Data)
 
       })
-    if (Data.length == 0 || inputText.length == 0) {
+    if (Data.length >= 0 || inputText.length == 0) {
       const style_input = document.getElementById("Place") as HTMLElement
       const style_text = document.getElementById("Fail_text") as HTMLElement
       style_input.style.border = '2px solid red';
