@@ -10,13 +10,7 @@ function App() {
   const [Data, Setdata] = useState("");
 
   const VerifyUser = async () => {
-    await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`, {
-      headers: {
-        "Access-Control-Allow-Origin": "https://frogcoins.vercel.app",
-        "Access-Control-Allow-Methods": "GET",
-        "Access-Control-Allow-Headers": "https://frogcoins.vercel.app",
-      }
-    })
+    await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
         Setdata(JSON.stringify(res.data))
       })
