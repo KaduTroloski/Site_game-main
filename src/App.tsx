@@ -12,7 +12,8 @@ function App() {
   const VerifyUser = async () => {
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`, {
       headers: {
-        "Acces-Control-Allow-Origin": "*",
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'Application/json'
       }
     })
       .then(res => {
