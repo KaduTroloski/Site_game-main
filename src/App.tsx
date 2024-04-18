@@ -5,7 +5,7 @@ import axios from 'axios';
 import Infos from './Components/Infos';
 
 function App() {
-  const [inputText, setInputText] = useState()
+  const [inputText, setInputText] = useState('')
 
 
   const handleChange = ({ event }: any) => {
@@ -13,7 +13,7 @@ function App() {
     console.log(inputText)
   };
 
-  const [Data, Setdata] = useState("");
+  const [Data, Setdata] = useState('');
 
   const VerifyUser = async () => {
 
