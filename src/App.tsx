@@ -13,7 +13,7 @@ function App() {
     console.log(inputText)
   };
 
-  const [Data, Setdata] = useState(inputText);
+  const [Data, Setdata] = useState('');
 
   const VerifyUser = async () => {
 
@@ -22,6 +22,7 @@ function App() {
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
         Setdata(JSON.stringify(res.data))
+        console.log(Data)
 
       })
     if (Data.length == 0 || inputText.length == 0) {
