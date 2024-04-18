@@ -21,7 +21,9 @@ function App() {
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
         Setdata(JSON.stringify(res.data))
-
+        if (Data.length == 0) {
+          Setdata(JSON.stringify(res.data))
+        }
       })
       .then(() => {
         if (inputText.length == 0 || Data.length == 0) {
