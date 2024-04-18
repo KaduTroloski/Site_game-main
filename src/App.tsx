@@ -8,7 +8,7 @@ function App() {
   const [inputText, setInputText] = useState('')
 
 
-  const handleChange = (event) => {
+  const handleChange = ({ event }: any) => {
 
     setInputText(event.target.value)
     console.log(inputText)
@@ -67,7 +67,7 @@ function App() {
 
         <div id="Input">
           <h2>Enter your Nickname</h2>
-          <input id='Place' type="text" name='Place' placeholder="Nickname..." onChange={handleChange} onMouseLeave={handleChange} onDragLeave={handleChange}></input>
+          <input id='Place' type="text" name='Place' placeholder="Nickname..." onChange={handleChange} onMouseLeave={handleChange} onBeforeInput={handleChange}></input>
           <p id="Fail_text">User not fund</p>
           <button onClick={VerifyUser} >Entrar</button>
         </div>
