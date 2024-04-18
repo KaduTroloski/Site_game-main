@@ -5,11 +5,10 @@ import axios from 'axios';
 import Infos from './Components/Infos';
 
 function App() {
-  const [inputText, setInputText] = useState("")
+  const [inputText, setInputText] = useState()
 
 
   const handleChange = ({ event }: any) => {
-
     setInputText(event.target.value)
     console.log(inputText)
   };
