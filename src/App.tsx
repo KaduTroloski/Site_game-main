@@ -67,7 +67,7 @@ function App() {
 
         <div id="Input">
           <h2>Enter your Nickname</h2>
-          <input id='Place' type="text" name='Place' placeholder="Nickname..." onChange={handleChange} onMouseLeave={handleChange} onDragEnd={handleChange}></input>
+          <input id='Place' type="text" name='Place' placeholder="Nickname..." onChange={handleChange} onMouseLeave={handleChange} onDragLeave={handleChange}></input>
           <p id="Fail_text">User not fund</p>
           <button onClick={VerifyUser} >Entrar</button>
         </div>
