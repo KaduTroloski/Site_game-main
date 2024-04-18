@@ -21,10 +21,8 @@ function App() {
     axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
-        Setdata(inputText)
         Setdata(JSON.stringify(res.data))
-        console.log(Data)
-        if (Data.length == 0 || inputText.length == 0 || Data.length <= 2) {
+        if (Data.length > 0 || inputText.length == 0) {
           const style_input = document.getElementById("Place") as HTMLElement
           const style_text = document.getElementById("Fail_text") as HTMLElement
           style_input.style.border = '2px solid red';
