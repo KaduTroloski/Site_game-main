@@ -12,7 +12,7 @@ function App() {
     setInputText(e.target.value)
   };
 
-  const [Data, Setdata] = useState('');
+  const [Data, Setdata] = useState(inputText);
 
   const VerifyUser = async () => {
 
