@@ -12,8 +12,8 @@ function App() {
   const VerifyUser = async () => {
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`, {
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": ["GET", "POST", "DELETE"],
+        "Access-Control-Allow-Origin": "https://site-game-main.vercel.app",
+        "Access-Control-Allow-Methods": "GET",
         "Access-Control-Allow-Headers": "*"
 
       }
@@ -29,11 +29,8 @@ function App() {
       style_input.style.border = await '2px solid red';
       style_text.style.display = await 'flex'
     }
-
-
-
-
     else {
+
       const div1 = await document.getElementById("Input") as HTMLElement
       const div2 = await document.getElementById("Infos") as HTMLElement
 
@@ -42,9 +39,10 @@ function App() {
         div2.style.display = 'flex';
 
       }
-
     }
   }
+
+
 
   let Replacedata = (Data.replace(/"/g, ""));
   Replacedata = Replacedata.replace(/{/g, "")
@@ -57,7 +55,6 @@ function App() {
   Replacedata = Replacedata.replace(/total_minuts/, "")
   Replacedata = Replacedata.replace(/total_seconds/, "")
   const SplitData = Replacedata.split(",");
-
 
 
   return (
