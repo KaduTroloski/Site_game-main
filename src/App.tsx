@@ -17,8 +17,7 @@ function App() {
         Setdata(JSON.stringify(res.data))
       })
 
-    if (Data.length <= 2 || inputText.length == 0) {
-
+    if (Data.length <= 2 || inputText.length == 0 && !Data) {
       const style_input = document.getElementById("Place") as HTMLElement
       const style_text = document.getElementById("Fail_text") as HTMLElement
       style_input.style.border = '2px solid red';
