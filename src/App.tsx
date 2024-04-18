@@ -10,7 +10,6 @@ function App() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
-    console.log(inputText)
   };
 
   const [Data, Setdata] = useState('');
@@ -24,23 +23,25 @@ function App() {
         Setdata(JSON.stringify(res.data))
 
       })
-    if (Data.length == 0 || inputText.length == 0 || Data.length == 2) {
-      const style_input = document.getElementById("Place") as HTMLElement
-      const style_text = document.getElementById("Fail_text") as HTMLElement
-      style_input.style.border = '2px solid red';
-      style_text.style.display = 'flex'
-    }
-    else {
+      .then(() => {
+        if (inputText.length == 0 || Data.length == 2) {
+          const style_input = document.getElementById("Place") as HTMLElement
+          const style_text = document.getElementById("Fail_text") as HTMLElement
+          style_input.style.border = '2px solid red';
+          style_text.style.display = 'flex'
+        }
+        else {
 
-      const div1 = document.getElementById("Input") as HTMLElement
-      const div2 = document.getElementById("Infos") as HTMLElement
+          const div1 = document.getElementById("Input") as HTMLElement
+          const div2 = document.getElementById("Infos") as HTMLElement
 
-      if (div1.style.display != 'flex') {
-        div1.style.display = 'none';
-        div2.style.display = 'flex';
+          if (div1.style.display != 'flex') {
+            div1.style.display = 'none';
+            div2.style.display = 'flex';
 
-      }
-    }
+          }
+        }
+      })
   }
 
 
