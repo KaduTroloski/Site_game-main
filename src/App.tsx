@@ -23,24 +23,24 @@ function App() {
       .then(res => {
         Setdata(JSON.stringify(res.data))
         Setdata(JSON.stringify(res.data))
-        if (Data.length == 0 || inputText.length == 0) {
-          const style_input = document.getElementById("Place") as HTMLElement
-          const style_text = document.getElementById("Fail_text") as HTMLElement
-          style_input.style.border = '2px solid red';
-          style_text.style.display = 'flex'
-        }
-        else {
-
-          const div1 = document.getElementById("Input") as HTMLElement
-          const div2 = document.getElementById("Infos") as HTMLElement
-
-          if (div1.style.display != 'flex') {
-            div1.style.display = 'none';
-            div2.style.display = 'flex';
-
-          }
-        }
       })
+    if (Data.length == 0 || inputText.length == 0) {
+      const style_input = document.getElementById("Place") as HTMLElement
+      const style_text = document.getElementById("Fail_text") as HTMLElement
+      style_input.style.border = '2px solid red';
+      style_text.style.display = 'flex'
+    }
+    else {
+
+      const div1 = document.getElementById("Input") as HTMLElement
+      const div2 = document.getElementById("Infos") as HTMLElement
+
+      if (div1.style.display != 'flex') {
+        div1.style.display = 'none';
+        div2.style.display = 'flex';
+
+      }
+    }
   }
 
 
