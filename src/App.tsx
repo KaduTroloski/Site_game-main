@@ -8,20 +8,30 @@ function App() {
   const [inputText, setInputText] = useState('')
 
 
+  const [Data, Setdata] = useState('')
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
   };
-
-  const [Data, Setdata] = useState('');
-
-  const VerifyUser = async () => {
-
+  const NewUser = async () => {
     axios.defaults.headers.get['Content-Type'] = 'application/json;charset=utf-8';
     axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
         Setdata(JSON.stringify(res.data))
       })
+
+    if (Data.length == 0) {
+      NewUser
+    } else {
+      VerifyUser();
+    }
+
+  }
+
+
+
+  const VerifyUser = () => {
 
     if (inputText.length == 0 || Data.length <= 2) {
       const style_input = document.getElementById("Place") as HTMLElement
@@ -41,6 +51,8 @@ function App() {
       }
     }
 
+
+
   }
 
 
@@ -51,6 +63,7 @@ function App() {
   Replacedata = Replacedata.replace(/}/g, "")
   Replacedata = Replacedata.replace(/:/g, "")
   Replacedata = Replacedata.replace(/]/g, "")
+  Replacedata = Replacedata.replace(/id_player/, "")
   Replacedata = Replacedata.replace(/name_player/, "")
   Replacedata = Replacedata.replace(/total_score/, "")
   Replacedata = Replacedata.replace(/total_deaths/, "")
@@ -65,9 +78,9 @@ function App() {
 
         <div id="Input">
           <h2>Enter your Nickname</h2>
-          <input id='Place' value={inputText} type="text" placeholder="Nickname..." onChange={handleChange} onEnded={handleChange}></input>
+          <input id='Place' value={inputText} type="text" placeholder="Nickname..." onChange={handleChange} ></input>
           <p id="Fail_text">User not fund</p>
-          <button onFocus={VerifyUser} >Entrar</button>
+          <button onClick={NewUser} onMouseDown={NewUser} onTouchEnd={NewUser} onTouchStart={NewUser} >Entrar</button>
         </div>
 
 
