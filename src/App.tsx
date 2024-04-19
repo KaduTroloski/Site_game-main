@@ -12,7 +12,7 @@ function App() {
     setInputText(e.target.value)
   };
 
-  const [Data, Setdata] = useState(inputText);
+  const [Data, Setdata] = useState('');
 
   const VerifyUser = async () => {
 
@@ -21,11 +21,6 @@ function App() {
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
         Setdata(JSON.stringify(res.data))
-        console.log(Data)
-        if (Data.length == 0) {
-          Setdata(JSON.stringify(res.data))
-          console.log(Data)
-        }
       })
 
     if (inputText.length == 0 || Data.length <= 2) {
@@ -72,7 +67,7 @@ function App() {
           <h2>Enter your Nickname</h2>
           <input id='Place' value={inputText} type="text" placeholder="Nickname..." onChange={handleChange} onEnded={handleChange}></input>
           <p id="Fail_text">User not fund</p>
-          <button onClick={VerifyUser} >Entrar</button>
+          <button onFocus={VerifyUser} >Entrar</button>
         </div>
 
 
