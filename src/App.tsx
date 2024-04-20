@@ -7,8 +7,7 @@ import Infos from './Components/Infos';
 function App() {
   const [inputText, setInputText] = useState('')
 
-
-  const [Data, Setdata] = useState('')
+  var Data = '';
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
@@ -18,7 +17,7 @@ function App() {
     axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
-        Setdata(JSON.stringify(res.data))
+        Data = (JSON.stringify(res.data))
       })
 
     if (Data.length == 0) {
@@ -80,7 +79,7 @@ function App() {
           <h2>Enter your Nickname</h2>
           <input id='Place' value={inputText} type="text" placeholder="Nickname..." onChange={handleChange} ></input>
           <p id="Fail_text">User not fund</p>
-          <button onClick={NewUser} onMouseDown={NewUser} onTouchEnd={NewUser} onTouchStart={NewUser} >Entrar</button>
+          <button onClick={NewUser} onTouchEnd={NewUser}  >Entrar</button>
         </div>
 
 
