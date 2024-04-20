@@ -12,12 +12,13 @@ function App() {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
   };
+
   const NewUser = async () => {
     axios.defaults.headers.get['Content-Type'] = 'application/json;charset=utf-8';
     axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
-        Data = (JSON.stringify(res.data))
+        Data = JSON.stringify(res.data)
       })
 
     if (Data.length == 0) {
