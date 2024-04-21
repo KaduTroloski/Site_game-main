@@ -21,7 +21,7 @@ function Infos({ data }: any) {
           </main>
           <ul>
             <li>Deaths: {data[3]}</li>
-            <li>Game Time: {data[4]}m e {data[5]}s</li>
+            <li>Game Time: {data[4]}m : {data[5]}s</li>
 
           </ul>
 
