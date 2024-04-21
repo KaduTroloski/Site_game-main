@@ -6,8 +6,8 @@ import Infos from './Components/Infos';
 
 function App() {
   const [inputText, setInputText] = useState('')
+  const [SplitData, setSplitData] = useState('');
 
-  var Data = '';
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value)
@@ -18,20 +18,20 @@ function App() {
     axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     await axios.get(`https://api-node-7vk8.onrender.com/user?search=${inputText}`)
       .then(res => {
-        Data = JSON.stringify(res.data)
+        const Data = JSON.stringify(res.data)
+        if (Data.length == 0) {
+          NewUser
+        } else {
+          VerifyUser(Data);
+        }
       })
 
-    if (Data.length == 0) {
-      NewUser
-    } else {
-      VerifyUser();
-    }
 
   }
 
 
 
-  const VerifyUser = () => {
+  const VerifyUser = (Data?: any) => {
 
     if (inputText.length == 0 || Data.length <= 2) {
       const style_input = document.getElementById("Place") as HTMLElement
@@ -48,28 +48,28 @@ function App() {
         div1.style.display = 'none';
         div2.style.display = 'flex';
 
+        let Replacedata = (Data.replace(/"/g, ""));
+        Replacedata = Replacedata.replace(/{/g, "")
+        Replacedata = Replacedata.replace(/}/g, "")
+        Replacedata = Replacedata.replace(/:/g, "")
+        Replacedata = Replacedata.replace(/]/g, "")
+        Replacedata = Replacedata.replace(/id_player/, "")
+        Replacedata = Replacedata.replace(/name_player/, "")
+        Replacedata = Replacedata.replace(/total_score/, "")
+        Replacedata = Replacedata.replace(/total_deaths/, "")
+        Replacedata = Replacedata.replace(/total_minuts/, "")
+        Replacedata = Replacedata.replace(/total_seconds/, "")
+        const split = Replacedata.split(",");
+        console.log(split)
+        setSplitData(split)
+
+
       }
+
     }
-
-
-
   }
 
 
-
-
-  let Replacedata = (Data.replace(/"/g, ""));
-  Replacedata = Replacedata.replace(/{/g, "")
-  Replacedata = Replacedata.replace(/}/g, "")
-  Replacedata = Replacedata.replace(/:/g, "")
-  Replacedata = Replacedata.replace(/]/g, "")
-  Replacedata = Replacedata.replace(/id_player/, "")
-  Replacedata = Replacedata.replace(/name_player/, "")
-  Replacedata = Replacedata.replace(/total_score/, "")
-  Replacedata = Replacedata.replace(/total_deaths/, "")
-  Replacedata = Replacedata.replace(/total_minuts/, "")
-  Replacedata = Replacedata.replace(/total_seconds/, "")
-  const SplitData = Replacedata.split(",");
 
 
   return (
@@ -87,7 +87,7 @@ function App() {
         <div id="Infos">
           <h2>FrogCoin's</h2>
 
-          <Infos data={SplitData}></Infos>
+          <Infos data={SplitData} ></Infos>
 
         </div>
 
